@@ -70,7 +70,7 @@ You should now be inside the container shell at `/workspace`.
 
 ---
 
-## Step 4 — Install Unsloth (inside the container)
+## Step 4 — Install Notebook to kick start your workshop (inside the container)
 
 Run these three commands in order:
 
