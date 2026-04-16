@@ -78,28 +78,6 @@ Run these three commands in order:
 pip install notebook
 ```
 
-```bash
-pip install --no-deps unsloth unsloth-zoo
-```
-
-```bash
-pip install --no-deps git+https://github.com/unslothai/unsloth-zoo.git
-```
-
-```bash
-pip install "unsloth[amd] @ git+https://github.com/unslothai/unsloth"
-```
-
-```bash
-pip install bitsandbytes
-```
-
-Verify the install:
-
-```bash
-python -c "import unsloth; print('Unsloth OK')"
-```
-
 ---
 
 ## Step 6 — Configure your finetuning run
