@@ -91,7 +91,6 @@ pip install --no-deps git+https://github.com/unslothai/unsloth-zoo.git
 ```bash
 pip install "unsloth[amd] @ git+https://github.com/unslothai/unsloth"
 ```
-```bash
 
 ```bash
 pip install bitsandbytes
@@ -110,7 +109,7 @@ python -c "import unsloth; print('Unsloth OK')"
 ```bash
 cd /workspace
 
-curl -L -O "https://github.com/unslothai/notebooks/raw/main/nb/Gemma4_(E2B)_Reinforcement_Learning_Sudoku_Game.ipynb"
+curl -L -o "Gemma4_(E2B)_Reinforcement_Learning_Sudoku_Game.ipynb" "https://raw.githubusercontent.com/iswaryaalex/Unsloth-RL-Workshop-on-Radeon/main/Gemma4_(E2B)_Reinforcement_Learning_Sudoku_Game.ipynb"
 
 jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root
 
