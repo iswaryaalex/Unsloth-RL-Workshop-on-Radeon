@@ -77,6 +77,10 @@ You should now be inside the container shell at `/workspace`.
 Run these three commands in order:
 
 ```bash
+pip install notebook
+```
+
+```bash
 pip install --no-deps unsloth unsloth-zoo
 ```
 
@@ -103,7 +107,14 @@ python -c "import unsloth; print('Unsloth OK')"
 
 ## Step 6 — Configure your finetuning run
 
-Open `finetune.py` and edit the `CONFIG` block at the top to match your needs.
+```bash
+cd /workspace
+
+curl -L -O "https://github.com/unslothai/notebooks/raw/main/nb/Gemma4_(E2B)_Reinforcement_Learning_Sudoku_Game.ipynb"
+
+jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+
+```
 
 Key settings to review before running:
 
@@ -118,25 +129,7 @@ Key settings to review before running:
 
 ---
 
-## Step 7 — Run finetuning
 
-```bash
-python finetune.py
-```
-
-Training logs will print to the terminal. The model will be saved to `outputs/` when complete.
-
----
-
-## Resuming a stopped container
-
-If your container is stopped but not removed, resume it with:
-
-```bash
-docker start -ai unsloth-finetune
-```
-
-Then jump straight to Step 7.
 
 ---
 
