@@ -8,14 +8,18 @@ A step-by-step guide to set up your environment and run the finetuning script.
 
 - Ubuntu 22.04 / 24.04 machine with an AMD GPU
 - Internet access
+- Credentials
+  ```bash
+  Username: amd-user
+  Password: amd1234
+  ```
 
 ---
 
-## Step 1 — Install ROCm (skip if already installed)
-
+## Step 1 — Check ROCm Installation
 > Full reference: [Install Ryzen Software for Linux with ROCm](https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/install/installryz/native_linux/install-ryzen.html)
 
-ROCm must be installed on the **host machine** so the Docker container can access your AMD GPU.
+ROCm has been already installed on the **host machine**
 
 Check if ROCm is already installed:
 
@@ -80,31 +84,10 @@ pip install notebook
 cd /workspace
 
 curl -L -o "Gemma4_(E2B)_Reinforcement_Learning_Sudoku_Game.ipynb" "https://raw.githubusercontent.com/iswaryaalex/Unsloth-RL-Workshop-on-Radeon/main/Gemma4_(E2B)_Reinforcement_Learning_Sudoku_Game.ipynb"
-
+```
+### Start your Jupyter Notebook
+```bash
 jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root
-
 ```
 
-Key settings to review before running:
-
-| Setting | What to change |
-|---|---|
-| `MODEL_NAME` | The base model to finetune |
-| `DATASET_NAME` / `DATASET_SPLIT` | Your training data |
-| `MAX_STEPS` / `NUM_TRAIN_EPOCHS` | Training duration |
-| `LORA_R` | LoRA rank — higher = more capacity |
-| `OUTPUT_DIR` | Where the trained model is saved |
-| `HF_TOKEN` / `HF_REPO_ID` | Fill in to push to HuggingFace Hub |
-
----
-
-
-
----
-
-## Tips
-
-- **Full training run:** in `finetune.py` set `MAX_STEPS = None` and `NUM_TRAIN_EPOCHS = 1`
-- **Save VRAM:** keep `LOAD_IN_4BIT = True` and `FULL_FINETUNING = False`
-- **Push to Hub:** set `HF_TOKEN` and `HF_REPO_ID` in the config — the script will push automatically after training
-- **Cache:** the container mounts `$HOME` so HuggingFace model downloads are cached across runs
+### You are all set!
