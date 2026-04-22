@@ -26,18 +26,12 @@ rocminfo
 If the command is not found, install from [Install Ryzen Software for Linux with ROCm](https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/install/installryz/native_linux/install-ryzen.html).
 
 
-## Step 2 — Pull the Docker image
-
+## Step 2 — Start the container
+If a container is already running, recommend to kill/remove it 
 ```bash
-docker pull rocm/vllm-dev:rocm7.2.1_navi_ubuntu24.04_py3.12_pytorch_2.9_vllm_0.16.0
+docker kill  workshop-env
+docker rm  workshop-env
 ```
-
-> This image includes Python 3.12, PyTorch 2.9, Triton 3.5, and ROCm support for AMD GPUs.
-> The download may take several minutes depending on your connection.
-
----
-
-## Step 3 — Start the container
 
 Run the container with your home directory mounted so files persist between sessions:
 
@@ -70,7 +64,7 @@ You should now be inside the container shell at `/workspace`.
 
 ---
 
-## Step 4 — Install Notebook to kick start your workshop (inside the container)
+## Step 3 — Install Notebook to kick start your workshop (inside the container)
 
 Run these three commands in order:
 
@@ -80,7 +74,7 @@ pip install notebook
 
 ---
 
-## Step 6 — Configure your finetuning run
+## Step 4 — Configure your finetuning run
 
 ```bash
 cd /workspace
