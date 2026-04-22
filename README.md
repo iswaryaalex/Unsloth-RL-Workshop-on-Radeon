@@ -33,7 +33,7 @@ If the command is not found, install from [Install Ryzen Software for Linux with
 ## Step 2 — Start the container
 If a container is already running, recommend to kill/remove it 
 ```bash
-docker kill  workshop-env
+docker kill workshop-env
 docker rm  workshop-env
 ```
 
