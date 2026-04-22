@@ -73,7 +73,7 @@ You should now be inside the container shell at `/workspace`.
 Run these three commands in order:
 
 ```bash
-pip install notebook
+pip install notebook ihighlight
 ```
 
 ---
